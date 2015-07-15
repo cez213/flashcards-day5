@@ -7,10 +7,8 @@ app.controller('ManageCardCtrl', function ($scope, FlashCardFactory, $stateParam
 		.then(null, function(err){
 			return next(err);
 		});
-	$scope.buttonClicked = false;
 
 	$scope.removeCard = function () {
-		$scope.buttonClicked = true;
 		if(confirm('Are you sure you want to delete this card?')){
 			FlashCardFactory.remove($stateParams.flashCardId)
 			$state.go('flashCard');

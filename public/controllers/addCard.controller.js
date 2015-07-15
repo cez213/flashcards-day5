@@ -19,7 +19,6 @@ app.controller('AddCard', function ($scope, FlashCardFactory, $rootScope, $state
     ];
 
 	$scope.setCorrect = function (givenAnswer, card) {
-		/*var card = $scope.newCard;*/
 		card.answers.forEach(function (a) {
 			a.correct = false;
 		});

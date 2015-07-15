@@ -1,3 +1,41 @@
+.menu-btn{
+  float: left;
+  padding: 5px;
+}
+
+.delete-btn{
+  padding-top: 10px;
+}
+
+.form-page{
+  margin-top: 10px;
+}
+
+.form{
+  padding-top: 30px;
+}
+
+.question-form{
+  width: 50%;
+}
+
+.manage-card a{
+  padding-top: 5px;
+  color: #007ACC;
+}
+.manage-card>a:visited{
+  text-decoration: none;
+}
+.submit-btn{
+  background-color: #E5E5E5;
+  border: 1px solid #AFAFAF;
+}
+
+input{
+  border-radius: 3px;
+  border: 1px solid #C1C1C2;
+}
+
 .bordered {
   border: 1px solid black;
   box-shadow: 3px 4px 5px 1px #6b6b6b; }
@@ -82,12 +120,12 @@ html, body {
   #statistics:after {
     clear: both; }
   #statistics #scoreboard {
-    float: right;
     margin: 0 auto; }
     #statistics #scoreboard h3 {
       margin-right: 40px;
-      float: left; }
+      display: inline-block; }
       #statistics #scoreboard h3:last-child {
-        margin-right: 0; }
+        margin-right: 0;
+        display: inline-block; }
       #statistics #scoreboard h3 span {
         font-weight: bold; }

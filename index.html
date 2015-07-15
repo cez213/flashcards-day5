@@ -5,18 +5,24 @@
         <!-- We've provided some styles for you, aren't we nice? -->
         <link rel="stylesheet" type="text/css" href="reset.css" />
         <link rel="stylesheet" type="text/css" href="style.css" />
+        <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
       <div ng-app="FlashCardApp">
-        <div>
-          <p><a ui-sref="flashCard">Flash Cards</a></p>
-          <p><a ui-sref="newFlashCardForm">New Card Form</a></p>
-          <p><a ui-sref="statistics">Scoreboard</a></p>
-        </div>
+        <div class="btn-group menu-btn">
+         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Menu <span class="caret"></span>
+         </button>
+         <ul class="dropdown-menu">
+          <li><a ui-sref="flashCard">Flash Cards</a></li>
+          <li><a ui-sref="newFlashCardForm">New Card Form</a></li>
+          <li><a ui-sref="statistics">Scoreboard</a></li>
+         </ul>
+      </div>
         <div ng-controller="MainCtrl">
-        
-        <ui-view></ui-view>
-  
+          <div class="col-md-12">
+            <ui-view></ui-view>
+          </div>
         </div>
       </div>
       <script src="angular.js"></script>
@@ -33,5 +39,7 @@
       <script src="directives/flashCard/EditFlashCard.directive.js"></script>
       <script src="controllers/manageCard.controller.js"></script>
       <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+       <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+       <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     </body>
 </html>

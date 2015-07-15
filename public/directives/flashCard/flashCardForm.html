@@ -3,7 +3,7 @@
   <form name="cardForm" ng-submit="postFlashCard(card)">
     <h3>Question</h3>
     <p>
-      <input type="text" ng-model="card.question" required>
+      <input type="text" class="question-form" ng-model="card.question" required>
     </p>
     <h3>Category</h3>
     <p>
@@ -23,6 +23,6 @@
         type="text"
         ng-model="answer.text" required>
     </p>
-    <input type="submit">
+    <input class="submit-btn" type="submit">
   </form>
 </div>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flash Cards</title>
+        <!-- We've provided some styles for you, aren't we nice? -->
+        <link rel="stylesheet" type="text/css" href="reset.css" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+    </head>
+    <body>
+      <div ng-app="FlashCardApp">
+        <div>
+          <p><a ui-sref="flashCard">Flash Cards</a></p>
+          <p><a ui-sref="newFlashCardForm">New Card Form</a></p>
+          <p><a ui-sref="statistics">Scoreboard</a></p>
+        </div>
+        <div ng-controller="MainCtrl">
+        
+        <ui-view></ui-view>
+  
+        </div>
+      </div>
+      <script src="angular.js"></script>
+      <script src="app.js"></script>
+      <script src="controllers/flashCard.controller.js"></script>
+      <script src="controllers/main.controller.js"></script>
+      <script src="controllers/stats.controller.js"></script>
+      <script src="controllers/addCard.controller.js"></script>
+      <script src="factories/flashCard.factory.js"></script>
+      <script src="factories/score.factory.js"></script>
+      <script src="directives/loader/loader.directive.js"></script>
+      <script src="directives/flashCard/flashCard.directive.js"></script>
+      <script src="directives/borderOnHover/borderOnHover.directive.js"></script>
+      <script src="directives/flashCard/EditFlashCard.directive.js"></script>
+      <script src="controllers/manageCard.controller.js"></script>
+      <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    </body>
+</html>

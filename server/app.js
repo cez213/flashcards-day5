@@ -35,7 +35,6 @@ app.get('/', function (req, res) {
 });
 
 app.post('/cards/form', function (req, res, next) {
-    console.log("running")
     FlashCardModel.create(req.body)
     .then(function (newCard) {
         res.json(newCard);
@@ -79,19 +78,18 @@ app.put('/cards/:flashCardId', function (req, res, next) {
 
         card.save(function(err, card){
             if(err) return next(err);
-            console.log("updated card:", card);
             res.json(card);
         })
         
     })
 });
 
-/*app.delete('/cards/:flashCardId/delete', function (req, res, next){
-    FlashCardModel.findById(req.params.flashCardId, function(err, card){
-        
+app.delete('/cards/:flashCardId/delete', function (req, res, next){
+    FlashCardModel.findByIdAndRemove(req.params.flashCardId, function(err, card){
+        if(err) return next(err);
+        console.log("card to delete:", card);
     })
-})*/
-
+})
 
 
 

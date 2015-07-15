@@ -1,4 +1,4 @@
-app.controller('AddCard', function ($scope, FlashCardFactory, $rootScope, $stateParams) {
+app.controller('AddCard', function ($scope, FlashCardFactory, $rootScope, $stateParams, $state) {
 	$scope.resetCard = function () {
 		$scope.newCard = {
 			answers: [{
@@ -18,8 +18,9 @@ app.controller('AddCard', function ($scope, FlashCardFactory, $rootScope, $state
         'Node'
     ];
 
-	$scope.setCorrect = function (givenAnswer) {
-		$scope.newCard.answers.forEach(function (a) {
+	$scope.setCorrect = function (givenAnswer, card) {
+		/*var card = $scope.newCard;*/
+		card.answers.forEach(function (a) {
 			a.correct = false;
 		});
 		givenAnswer.correct = true;
@@ -28,18 +29,18 @@ app.controller('AddCard', function ($scope, FlashCardFactory, $rootScope, $state
 	$scope.postFlashCard = function (givenCard) {
 		$scope.newCard = givenCard;
 		if($stateParams.flashCardId){
-			$scope.param = $stateParams.flashCardId;
-			FlashCardFactory.update($scope.newCard, $scope.param)
+			FlashCardFactory.update($scope.newCard, $stateParams.flashCardId)
 			.then(function (card) {
 				$rootScope.$broadcast('addedCard', card);
 				$scope.resetCard();
+				$state.go('flashCard');
 			});
 		}else{
-			$scope.param = 'form'
-			FlashCardFactory.create($scope.newCard, $scope.param)
+			FlashCardFactory.create($scope.newCard)
 			.then(function (card) {
 				$rootScope.$broadcast('addedCard', card);
 				$scope.resetCard();
+				$state.go('flashCard');
 			});
 		} 
 	};

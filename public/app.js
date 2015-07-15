@@ -25,11 +25,11 @@ app.config(function ($stateProvider){
 		.state('manageCard.edit', {
 			url: '/:flashCardId/edit',
 			controller: 'ManageCardCtrl',
-			templateUrl: '/directives/flashCard/stats.html'
+			templateUrl: '/directives/flashCard/ManageCardForm.html'
 		})
 		.state('manageCard.delete', {
 			url: '/:flashCardId/delete',
 			controller: 'ManageCardCtrl',
-			templateUrl: '/directives/flashCard/stats.html'
+			templateUrl: '/directives/flashCard/ManageCardForm.html'
 		})
 })

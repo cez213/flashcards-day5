@@ -1,5 +1,5 @@
 <div ng-controller="AddCard">
-  <!-- <pre>{{ card | json }}</pre> -->
+<!--   <pre>{{ card | json }}</pre> -->
   <form name="cardForm" ng-submit="postFlashCard(card)">
     <h3>Question</h3>
     <p>
@@ -14,11 +14,11 @@
     <h3>Answers</h3>
     <p ng-repeat="answer in card.answers">
       <input
-        type="radio"
         name="correctAnswer"
-        ng-model="answer.correct"
-        ng-change="setCorrect(answer)"
-        ng-value="true">
+        type="radio"
+        ng-change="setCorrect(answer, card)"
+        ng-value="true"
+        ng-model="answer.correct">
       <input
         type="text"
         ng-model="answer.text" required>

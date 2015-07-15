@@ -8,8 +8,8 @@ app.factory('FlashCardFactory', function ($http) {
           return res.data;
         });
       },
-      create: function (cardData, param) {
-        return $http.post('/cards/'+ param, cardData)
+      create: function (cardData) {
+        return $http.post('/cards/form', cardData)
         .then(function (res) {
           return res.data;
         });
@@ -22,6 +22,12 @@ app.factory('FlashCardFactory', function ($http) {
       },
       update: function (cardData, flashCardId) {
         return $http.put('/cards/' + flashCardId, cardData)
+          .then(function (res){
+            return res.data;
+          })
+      },
+      remove: function (flashCardId) {
+        return $http.delete('/cards/' + flashCardId + '/delete')
           .then(function (res){
             return res.data;
           })

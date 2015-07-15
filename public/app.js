@@ -5,31 +5,32 @@ app.config(function ($stateProvider){
 		.state('flashCard', {
 			url: '/',
 			controller: 'MainCtrl',
-			templateUrl: '/directives/flashCard/flashCardMain.html'
+			templateUrl: '/templates/flashCardMain.html'
 		})
 		.state('newFlashCardForm', {
 			url: '/form',
 			controller: 'AddCard', 
-			templateUrl: '/directives/flashCard/addFlashCard.html'
+			templateUrl: '/templates/addFlashCard.html'
+			/*template: '<edit-flash-card card="newCard"></edit-flash-card>'*/
 		})
 		.state('statistics', {
 			url: '/stats',
 			controller: 'StatsController',
-			templateUrl: '/directives/flashCard/stats.html'
+			templateUrl: '/templates/stats.html'
 		})
 		.state('manageCard', {
 			url: '/:flashCardId',
 			controller: 'ManageCardCtrl',
-			templateUrl: '/directives/flashCard/ManageCardForm.html'
+			templateUrl: '/templates/ManageCardForm.html'
 		})
 		.state('manageCard.edit', {
-			url: '/:flashCardId/edit',
+			url: '/edit',
 			controller: 'ManageCardCtrl',
-			templateUrl: '/directives/flashCard/ManageCardForm.html'
+			templateUrl: '/templates/ManageCardForm.html'
 		})
 		.state('manageCard.delete', {
-			url: '/:flashCardId/delete',
+			url: '/delete',
 			controller: 'ManageCardCtrl',
-			templateUrl: '/directives/flashCard/ManageCardForm.html'
+			templateUrl: '/templates/ManageCardForm.html'
 		})
 })

@@ -14,7 +14,9 @@ app.factory('FlashCardFactory', function ($http) {
           return res.data;
         });
       },
-      getById: function (flashCardId){
+      getById: function (flashCardId, $q){
+        //$q is like bluebird, it is a angular promise library
+        if(!flashCardId) return $q.reject("id is required");
         return $http.get('/cards/' + flashCardId)
           .then(function(res){
             return res.data;

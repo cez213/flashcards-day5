@@ -89,6 +89,11 @@ app.delete('/cards/:flashCardId/delete', function (req, res, next){
         if(err) return next(err);
         console.log("card to delete:", card);
     })
+/*    FlashCardModel.findByIdAndRemove(req.params.flashCardId)
+        .then(function(){
+            res.sendStatus(200);
+        })
+        .then(null, next());*/
 })
 
 
